@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/css/style.css" rel="stylesheet">
+    <script type="module" src="/src/js/main.js"></script>
+    <script src="https://kit.fontawesome.com/4433a9bda1.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    <title>Marinier Anthony</title>
+  </head>
+  <body class="bg-linear-to-br from-black to-slate-900 bg-fixed min-h-screen text-slate-50 text-sm font-display">
+
+    <div x-data="{
+      showLoading: true
+    }"
+      x-init="setTimeout(() => {showLoading = false}, 1000)"
+      x-transition.duration.1000ms
+      x-show="showLoading"
+      class="flex w-full h-screen justify-center items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="size-40 fill-sky-500 motion-safe:animate-spin dark:fill-sky-500">
+        <path d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z" opacity=".25" />
+        <path d="M10.14,1.16a11,11,0,0,0-9,8.92A1.59,1.59,0,0,0,2.46,12,1.52,1.52,0,0,0,4.11,10.7a8,8,0,0,1,6.66-6.61A1.42,1.42,0,0,0,12,2.69h0A1.57,1.57,0,0,0,10.14,1.16Z" />
+      </svg>
+    </div>
+
+    <!-- Container -->
+    <div class="flex justify-center w-full px-4">
+      
+      <!-- Container -->
+      <div class="flex flex-col gap-4 self-center w-full md:max-w-[80%] my-10">
+
+        <!-- User and contact -->
+        <div class="flex flex-col xl:flex-row gap-4">
+          <!-- User card -->
+          <div 
+            x-data="{
+              showUser: false,
+            }" 
+            x-init="setTimeout(() => {showUser = true}, 1000)"
+            x-show="showUser"
+            x-transition.delay.1000ms.duration.1000ms
+            class="flex flex-col w-full xl:basis-2/3 bg-linear-to-bl from-slate-900 to-cyan-900 transition duration-1000 hover:scale-105 shadow-lg rounded-lg p-4 md:p-6">
+            <div class="flex gap-4 items-start">
+              <div class="flex justify-center items-center basis-1/3">
+                <img src="/public/shikamaru.jpeg" alt="profile picture" class="size-26 md:size-40 object-cover rounded-full shadow-lg">
+              </div>
+              <div class="flex flex-col basis-2/3 gap-2">
+                <h1 class="text-lg">Hi, I'm MARINIER Anthony</h1>
+                <span>Location: France, Paris</span>
+                <p>I'm a freelance fullstack software developper specilized in building Web applications.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact -->
+          <div 
+            x-data="{
+              showContact: false,
+            }" 
+            x-init="setTimeout(() => {showContact = true}, 1000)"
+            x-show="showContact"
+            x-transition.delay.1500ms.duration.1000ms
+            class="flex flex-col w-full xl:basis-1/3 bg-linear-to-bl from-slate-900 to-cyan-900 transition duration-1000 hover:scale-105 shadow-lg rounded-lg gap-8 p-4 md:p-6">
+
+            <div class="flex gap-4 w-full items-start">
+              <div class="basis-1/4">
+                <h2 class="text-lg">Contact</h2>
+              </div>
+              <div class="flex flex-col basis-3/4 gap-2">
+                <span>Email: amarinier.pro@gmail.com</span>
+                <span>Tel: 06 31 21 48 71</span>
+              </div>
+            </div>
+
+            <div class="flex gap-4 w-full items-center">
+              <div class="basis-1/4">
+                <h2 class="text-lg">Socials</h2>
+              </div>
+              <div class="flex basis-3/4 gap-4">
+                <a href="" class="transition duration-1000 hover:scale-105"><i class="fa-brands fa-linkedin text-cyan-700 text-4xl"></i></a>
+                <a href="" class="transition duration-1000 hover:scale-105"><i class="fa-brands fa-github text-cyan-700 text-4xl"></i></a>
+                <a href="" class="transition duration-1000 hover:scale-105"><i class="fa-brands fa-twitter text-cyan-700 text-4xl"></i></a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <div 
+          x-data="{
+            showAboutMe: false,
+            showAboutMeContent: true,
+            carousel: ['/public/bike.jpg', '/public/']
+          }" 
+          x-init="setTimeout(() => {showAboutMe = true}, 1000)"
+          x-show="showAboutMe"
+          x-transition.delay.2000ms.duration.1000ms
+          class="flex flex-col w-full bg-linear-to-bl from-slate-900 to-cyan-900 transition duration-1000 hover:scale-105 shadow-lg rounded-lg p-4 md:p-6">
+          <div class="flex gap-4 items-start">
+            <div class="flex flex-col gap-4 basis-1/4">
+              <div class="flex items-center gap-2">
+                <h2 class="text-lg hover:underline hover:cursor-pointer" @click="showAboutMeContent = !showAboutMeContent">About me</h2>
+                <i x-show="showAboutMeContent" class="fa-solid fa-caret-down text-cyan-700 text-xl"></i>
+                <i x-show="!showAboutMeContent" class="fa-solid fa-caret-right text-cyan-700 text-xl"></i>
+              </div>
+            </div>
+            <div class="flex flex-col basis-3/4 gap-4" x-show="showAboutMeContent" x-transition.duration.500ms>
+              <p>I'm a 29-year-old French web engineer who first discovered a passion for technology through video games. As a teenager, I got into PC gaming and quickly realized that my computer was far from powerful. That led me to dive into hardware, learning everything I could about components and building my first PC in high school. Soon, I was assembling custom gaming rigs for friends, tailoring them to their needs.</p>
+              <p>A few years later, I became curious about the software side of computers. I enrolled in a software development program and was instantly drawn to web technologies. From my very first lesson in HTML, CSS, and PHP, I loved how visual and dynamic the web was—especially compared to my C programming classes.</p>
+              <p>Since then, I've been deeply involved in web development, constantly keeping up with new languages, frameworks, design patterns, and industry trends. As a web engineer, I strive to build robust, secure, and well-architected applications, always choosing the right design patterns for the right situations.</p>
+              <h3 class="text-lg">Interests</h3>
+              <div class="flex flex-col md:flex-row w-full gap-4">
+                  <div class="flex flex-col basis-1/4 items-start gap-2 p-4">
+                    <div class="flex gap-2 items-center">
+                      <i class="fa-solid fa-desktop text-cyan-700 text-4xl"></i>
+                      <h4>Hardware and peripherals</h4>
+                    </div>
+                    <ul class="ml-4 list-disc text-xs">
+                      <li>Smartphone, computers</li>
+                      <li>Gaming peripherals</li>
+                      <li>Audio peripherals</li>
+                      <li>Cameras</li>
+                    </ul>
+                  </div>
+
+                <div class="flex flex-col basis-1/4 items-start gap-2 p-4">
+                  <div class="flex gap-2 items-center">
+                    <i class="fa-solid fa-gamepad text-cyan-700 text-4xl"></i>
+                    <h4>Video games & Esport</h4>
+                  </div>
+                  <ul class="ml-4 list-disc text-xs">
+                    <li>League of legends</li>
+                    <li>osu!</li>
+                    <li>World of warcraft</li>
+                    <li>Dofus</li>
+                  </ul>
+                </div>
+
+                <div class="flex flex-col basis-1/4 items-start gap-2 p-4">
+                  <div class="flex gap-2 items-center">
+                    <i class="fa-solid fa-futbol text-cyan-700 text-4xl"></i>
+                    <h4>Sports</h4>
+                  </div>
+                  <ul class="ml-4 list-disc text-xs">
+                    <li>Football</li>
+                    <li>Basketball</li>
+                    <li>Fixed gear cycling</li>
+                    <li>Skating</li>
+                  </ul>
+                </div>
+
+                <div class="flex flex-col basis-1/4 items-start gap-2 p-4">
+                  <div class="flex gap-2 items-center">
+                    <i class="fa-solid fa-mountain-sun text-cyan-700 text-4xl"></i>
+                    <h4>Japanese culture</h4>
+                  </div>
+                  <ul class="ml-4 list-disc text-xs">
+                    <li>Food</li>
+                    <li>Music</li>
+                    <li>Manga / Anime</li>
+                    <li>Traditions and history</li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div 
+          x-data="{
+            showFreelance: false,
+            showFreelanceContent: true,
+          }" 
+          x-init="setTimeout(() => {showFreelance = true}, 1000)"
+          x-show="showFreelance"
+          x-transition.delay.2500ms.duration.1000ms
+          class="flex flex-col w-full bg-linear-to-bl from-slate-900 to-cyan-900 transition duration-1000 hover:scale-105 shadow-lg rounded-lg p-4 md:p-6">
+          <div class="flex gap-4 items-start">
+            <div class="basis-1/4">
+              <div class="flex items-center gap-2">
+                <h2 class="text-lg hover:underline hover:cursor-pointer" @click="showFreelanceContent = !showFreelanceContent">Freelance</h2>
+                <i x-show="showFreelanceContent" class="fa-solid fa-caret-down text-cyan-700 text-xl"></i>
+                <i x-show="!showFreelanceContent" class="fa-solid fa-caret-right text-cyan-700 text-xl"></i>
+              </div>
+            </div>
+            <div class="flex flex-col basis-3/4 gap-2" x-show="showFreelanceContent" x-transition.duration.500ms>
+              <h3 class="text-lg">Hire me !</h3>
+              <p class="pb-4 border-b border-slate-700">
+                I'm currently open to work for your project ! <br>
+                Wheter you need a showcase website, an e-commerce platform, developping a new web application or enhance an existing project, I'd be glad to provide my expertise for your needs.
+              </p>
+
+              <h3 class="text-lg self-center">Prices</h3>
+
+              <div class="flex flex-col md:flex-row w-full gap-4">
+                <div class="flex flex-col basis-1/3 items-center gap-2 p-4 bg-cyan-600/25 rounded-lg shadow-lg transition duration-1000 hover:scale-105">
+                  <h4 class="text-lg">Daily rate</h4>
+                  <span class="text-lg">400€</span>
+                  <p class="self-start text-xs">If you need me to work for your large project or your company</p>
+                </div>
+
+                <div class="flex flex-col basis-1/3 items-center gap-2 p-4 bg-cyan-600/25 rounded-lg shadow-lg transition duration-1000 hover:scale-105">
+                  <h4 class="text-lg">Showcase website</h4>
+                  <span class="text-lg">From 2000€</span>
+                  <p class="self-start text-xs">Optionnal heberging and support: 50€/month</p>
+                  <p class="self-start text-xs">The price may vary according to your needs</p>
+                  <p class="self-start text-xs">Expected time: Less than 2 weeks</p>
+                </div>
+
+                <div class="flex flex-col basis-1/3 items-center gap-2 p-4 bg-cyan-600/25 rounded-lg shadow-lg transition duration-1000 hover:scale-105">
+                  <h4 class="text-lg">E-commerce website</h4>
+                  <span class="text-lg">From 8000€</span>
+                  <p class="self-start text-xs">Optionnal heberging and support: 100€/month</p>
+                  <p class="self-start text-xs">The price may vary according to your needs</p>
+                  <p class="self-start text-xs">Expected time: From 1 to 2 months</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technologies and career -->
+        <div class="flex flex-col xl:flex-row gap-4">
+
+          <!-- Technologies -->
+          <div 
+            x-data="{
+              showTechnologies: false,
+              showTechnologiesContent: true,
+            }" 
+            x-init="setTimeout(() => {showTechnologies = true}, 1000)"
+            x-show="showTechnologies"
+            x-transition.delay.3000ms.duration.1000ms
+            class="flex flex-col w-full xl:basis-1/3 bg-linear-to-bl from-slate-900 to-cyan-900 transition duration-1000 hover:scale-105 shadow-lg rounded-lg p-4 md:p-6">
+            <div class="flex gap-4 items-start">
+              <div class="basis-1/4">
+                <div class="flex items-center gap-2">
+                  <h2 class="text-lg hover:underline hover:cursor-pointer" @click="showTechnologiesContent = !showTechnologiesContent">Technologies</h2>
+                  <i x-show="showTechnologiesContent" class="fa-solid fa-caret-down text-cyan-700 text-xl"></i>
+                  <i x-show="!showTechnologiesContent" class="fa-solid fa-caret-right text-cyan-700 text-xl"></i>
+                </div>
+              </div>
+              <div class="flex flex-col basis-3/4 gap-4" x-show="showTechnologiesContent" x-transition.duration.500ms>
+
+                <div class="flex gap-4 pb-4 w-full border-b border-slate-700">
+                  <div class="flex flex-col gap-4 basis-1/2">
+                    <h3 class="text-lg">PHP</h3>
+                    <div class="flex flex-col gap-2">
+                      <span>Laravel w/ Livewire</span>
+                      <span>Api platform</span>
+                    </div>
+                  </div>
+                  <div class="flex basis-1/2 items-center">
+                    <img src="public/laravel-2.svg" alt="laravel" class="rounded-lg size-20">
+                  </div>
+                </div>
+
+                <div class="flex gap-4 pb-4 w-full border-b border-slate-700">
+                  <div class="flex flex-col gap-4 basis-1/2">
+                    <h3 class="text-lg">JavaScript</h3>
+                    <div class="flex flex-col gap-2">
+                      <span>Reactjs (Next)</span>
+                      <span>Nodejs (Express, Nest)</span>
+                      <span>Alpinejs</span>
+                    </div>
+                  </div>
+                  <div class="flex basis-1/2 items-center">
+                    <img src="public/logo-javascript.svg" alt="js" class="rounded-lg size-20">
+                  </div>
+                </div>
+
+                <div class="flex gap-4 pb-4 w-full border-b border-slate-700">
+                  <div class="flex flex-col gap-4 basis-1/2">
+                    <h3 class="text-lg">CSS</h3>
+                    <div class="flex flex-col gap-2">
+                      <span>Tailwindcss</span>
+                    </div>
+                  </div>
+                  <div class="flex basis-1/2 items-center">
+                    <img src="public/tailwind-css-2.svg" alt="tailwind" class="rounded-lg size-20">
+                  </div>
+                </div>
+
+                <div class="flex gap-4 pb-4 w-full border-b border-slate-700">
+                  <div class="flex flex-col gap-4 basis-1/2">
+                    <h3 class="text-lg">Database</h3>
+                    <div class="flex flex-col gap-2">
+                      <span>SQL</span>
+                      <span>Mongo</span>
+                    </div>
+                  </div>
+                  <div class="flex basis-1/2 items-center">
+                    <img src="public/mysql-logo-pure.svg" alt="mysql" class="rounded-lg size-20">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div 
+            x-data="{
+              showCareer: false,
+              showCareerContent: true,
+            }" 
+            x-init="setTimeout(() => {showCareer = true}, 1000)"
+            x-show="showCareer"
+            x-transition.delay.3500ms.duration.1000ms
+            class="flex flex-col w-full xl:basis-2/3 bg-linear-to-bl from-slate-900 to-cyan-900 transition duration-1000 hover:scale-105 shadow-lg rounded-lg p-4 md:p-6">
+            <div class="flex gap-4 items-start">
+              <div class="basis-1/4">
+                <div class="flex items-center gap-2">
+                  <h2 class="text-lg hover:underline hover:cursor-pointer" @click="showCareerContent = !showCareerContent">Career</h2>
+                  <i x-show="showCareerContent" class="fa-solid fa-caret-down text-cyan-700 text-xl"></i>
+                  <i x-show="!showCareerContent" class="fa-solid fa-caret-right text-cyan-700 text-xl"></i>
+                </div>
+              </div>
+              <div class="flex flex-col basis-3/4 gap-4" x-show="showCareerContent" x-transition.duration.500ms>
+
+                <div class="flex flex-col gap-4 pb-4 w-full border-b border-slate-700">
+                  <div class="flex gap-2 items-center">
+                    <i class="fa-solid fa-graduation-cap text-cyan-700 text-4xl"></i>
+                    <h3 class="text-lg">School 2016-2019</h3>
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    <span>I've graduated the Web technologies cursus @ESGI School in Paris</span>
+                  </div>
+                </div>
+
+                <div class="flex flex-col gap-4 pb-4 w-full border-b border-slate-700">
+                  <div class="flex gap-2 items-center">
+                    <i class="fa-solid fa-building text-cyan-700 text-4xl"></i>
+                    <h3 class="text-lg">Axway software 2016-2019</h3>
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    <p>I worked as an apprentice as a fullstack software developper.<br>
+                      Here's a list of several missions I used to work in:
+                    </p>
+                    <ul class="ml-4 list-disc">
+                      <li>Learned the basics of Java programming and built my first API endpoints with @Springboot</li>
+                      <li>Building several reusable UI components in react for our custom library</li>
+                      <li>Building a internal tool to format and process data from a CSV file as input in plain Java</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="flex flex-col gap-4 pb-4 w-full border-b border-slate-700">
+                  <div class="flex gap-2 items-center">
+                    <i class="fa-solid fa-vr-cardboard text-cyan-700 text-4xl"></i>
+                    <h3 class="text-lg">Habiteo 2020-2024</h3>
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    <p>My first job after I graduated from school. Habiteo was a start-up specialized in building 3D tools and visuals for real-estate sector using web technologies. <br>
+                      My main job consisted in building and maintaining the central backoffice application as well as building its REST APIs. <br>
+                      Here's a list of several missions I used to work in:
+                    </p>
+                    <ul class="ml-4 list-disc">
+                      <li>Building and maintaining the backoffice application in PHP @Zendframework and @Bootstrapcss</li>
+                      <li>Building APIs from the backoffice data for a tool that render widgets to display 3D assets such as Virtual Tours, 3D Plans, Neightborhood Drone Plans etc</li>
+                      <li>Building a CRM software with @Symfony and @ApiPlatform</li>
+                      <li>Building and maintaining an API gateway between our backoffice and JIRA softwware using Webhooks in a Nodejs stack with Hapi</li>
+                    </ul>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div 
+          x-data="{
+            showProjects: false,
+            showProjectsContent: true,
+          }" 
+          x-init="setTimeout(() => {showProjects = true}, 1000)"
+          x-show="showProjects"
+          x-transition.delay.4000ms.duration.1000ms
+          class="flex flex-col w-full bg-linear-to-bl from-slate-900 to-cyan-900 transition duration-1000 hover:scale-105 shadow-lg rounded-lg p-4 md:p-6">
+          <div class="flex gap-4 items-start">
+            <div class="basis-1/4">
+              <div class="flex items-center gap-2">
+                <h2 class="text-lg hover:underline hover:cursor-pointer" @click="showProjectsContent = !showProjectsContent">Projects</h2>
+                <i x-show="showProjectsContent" class="fa-solid fa-caret-down text-cyan-700 text-xl"></i>
+                <i x-show="!showProjectsContent" class="fa-solid fa-caret-right text-cyan-700 text-xl"></i>
+              </div>
+            </div>
+            <div class="flex flex-col basis-3/4 gap-2" x-show="showProjectsContent" x-transition.duration.500ms>
+              <h3 class="text-lg"><a href="https://osurnament.com" target="_blank" class="hover:underline">Osurnament.com</a></h3>
+              <p class="pb-4 border-b border-slate-700">
+                Osurnament is a both a CMS and an Esport platform for the game osu! <br>
+                It's a robust realtime web application in which people can create and manage tournaments or simply participate to them with a simple SSO connexion with their osu! account.<br>
+                People can also register according to certain conditions like their rank to any tournament created on the platform. <br>
+              </p>
+              <span>Tech stack</span>
+              <p class="pb-4 border-b border-slate-700">I built and maintain this application alone with Laravel, Livewire, Alpine and Tailwindcss.</p>
+              <span>Features:</span>
+              <ul class="list-disc ml-4">
+                <li>A custom laravel provider for SSO connexion with the osu! API.</li>
+                <li>A notification system for each action happening on the application.</li>
+                <li>A microservices architecture to handle each step of a tournament.</li>
+                <li>A strong management and delegation system for the tournament's staff.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>
