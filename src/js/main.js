@@ -1,4 +1,4 @@
-import '../styles.css'
+import '/src/styles.css';
 import Alpine from 'alpinejs'
  
 window.Alpine = Alpine
