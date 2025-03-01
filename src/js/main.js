@@ -1,6 +1,6 @@
-import '/src/styles.css';
-import Alpine from 'alpinejs'
+import './src/css/styles.css';
+import Alpine from 'alpinejs';
  
-window.Alpine = Alpine
+window.Alpine = Alpine;
  
-Alpine.start()
+Alpine.start();
