@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <title>Marinier Anthony</title>
   </head>
-  <body class="bg-linear-to-br from-slate-900 to-slate-800 bg-fixed min-h-screen text-slate-50 text-sm font-display">
+  <body class="bg-gray-950 bg-fixed min-h-screen text-slate-50 text-sm font-display">
 
     <div x-data="{
       showLoading: true
@@ -20,7 +20,7 @@
       x-transition.duration.1000ms
       x-show="showLoading"
       class="flex w-full h-screen justify-center items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="size-40 fill-sky-500 motion-safe:animate-spin dark:fill-sky-500">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="size-40 fill-cyan-600 motion-safe:animate-spin">
         <path d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z" opacity=".25" />
         <path d="M10.14,1.16a11,11,0,0,0-9,8.92A1.59,1.59,0,0,0,2.46,12,1.52,1.52,0,0,0,4.11,10.7a8,8,0,0,1,6.66-6.61A1.42,1.42,0,0,0,12,2.69h0A1.57,1.57,0,0,0,10.14,1.16Z" />
       </svg>
@@ -42,7 +42,7 @@
             x-init="setTimeout(() => {showUser = true}, 1000)"
             x-show="showUser"
             x-transition.delay.1000ms.duration.1000ms
-            class="flex flex-col w-full xl:basis-2/3 bg-linear-to-bl from-slate-900 to-cyan-900 transition duration-1000 hover:scale-101 shadow-lg rounded-lg p-4 md:p-6">
+            class="flex flex-col w-full xl:basis-2/3 bg-black transition duration-500 hover:scale-101 hover:shadow-md hover:shadow-slate-600/25 rounded-lg p-4 md:p-6">
             <div class="flex flex-col md:flex-row gap-4 items-start">
               <div class="flex w-full justify-center items-center basis-1/3">
                 <img src="/public/shikamaru.jpeg" alt="profile picture" class="size-26 md:size-40 object-cover rounded-full shadow-lg">
@@ -83,7 +83,7 @@
             x-init="setTimeout(() => {showContact = true}, 1000)"
             x-show="showContact"
             x-transition.delay.1500ms.duration.1000ms
-            class="flex flex-col w-full xl:basis-1/3 bg-linear-to-bl from-slate-900 to-cyan-900 transition duration-1000 hover:scale-101 shadow-lg rounded-lg gap-8 p-4 md:p-6">
+            class="flex flex-col w-full xl:basis-1/3 bg-black transition duration-500 hover:scale-101 hover:shadow-md hover:shadow-slate-600/25 rounded-lg gap-8 p-4 md:p-6">
 
             <div class="flex gap-4 w-full items-center">
               <div class="basis-1/4">
@@ -99,12 +99,12 @@
                 <h2 class="text-lg">Socials</h2>
               </div>
               <div class="flex basis-3/4 gap-4">
-                <a href="https://www.linkedin.com/in/anthony-marinier-746930187" target="_blank" class="transition duration-1000 hover:scale-101"><i class="fa-brands fa-linkedin text-cyan-700 text-4xl"></i></a>
-                <a href="https://github.com/eldyblue" target="_blank" class="transition duration-1000 hover:scale-101"><i class="fa-brands fa-square-github text-cyan-700 text-4xl"></i></a>
+                <a href="https://www.linkedin.com/in/anthony-marinier-746930187" target="_blank" class="transition duration-500 hover:scale-101"><i class="fa-brands fa-linkedin text-cyan-700 text-4xl"></i></a>
+                <a href="https://github.com/eldyblue" target="_blank" class="transition duration-500 hover:scale-101"><i class="fa-brands fa-square-github text-cyan-700 text-4xl"></i></a>
               </div>
             </div>
 
-            <div class="bg-cyan-600/25 p-6 rounded-lg shadow-lg w-full" x-data="formHandler()">
+            <div class="bg-gray-800/50 p-6 rounded-lg shadow-lg w-full" x-data="formHandler()">
               <h2 class="text-lg font-bold text-center">Contact Me</h2>
           
               <form @submit="submitForm" class="mt-4">
@@ -125,7 +125,7 @@
                 
                 <button 
                   type="submit" 
-                  class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition disabled:bg-gray-400 disabled:cursor-not-allowed"
+                  class="w-full bg-cyan-600/25 text-white py-2 rounded-lg hover:bg-cyan-600 transition disabled:bg-gray-400 disabled:cursor-not-allowed"
                   :disabled="loading"
                   x-text="loading ? 'Sending...' : 'Send'">
                 </button>
@@ -145,7 +145,7 @@
           x-init="setTimeout(() => {showAboutMe = true}, 1000)"
           x-show="showAboutMe"
           x-transition.delay.2000ms.duration.1000ms
-          class="flex flex-col w-full bg-linear-to-bl from-slate-900 to-cyan-900 transition duration-1000 hover:scale-101 shadow-lg rounded-lg p-4 md:p-6">
+          class="flex flex-col w-full bg-black transition duration-500 hover:scale-101 hover:shadow-md hover:shadow-slate-600/25 rounded-lg p-4 md:p-6">
           <div class="flex flex-col md:flex-row gap-4 items-start">
             <div class="flex flex-col gap-4 basis-1/4">
               <div class="flex items-center gap-2">
@@ -225,7 +225,7 @@
           x-init="setTimeout(() => {showFreelance = true}, 1000)"
           x-show="showFreelance"
           x-transition.delay.2500ms.duration.1000ms
-          class="flex flex-col w-full bg-linear-to-bl from-slate-900 to-cyan-900 transition duration-1000 hover:scale-101 shadow-lg rounded-lg p-4 md:p-6">
+          class="flex flex-col w-full bg-black transition duration-500 hover:scale-101 hover:shadow-md hover:shadow-slate-600/25 rounded-lg p-4 md:p-6">
           <div class="flex flex-col md:flex-row gap-4 items-start">
             <div class="basis-1/4">
               <div class="flex items-center gap-2">
@@ -244,13 +244,13 @@
               <h3 class="text-lg">Prices</h3>
 
               <div class="flex flex-col md:flex-row w-full gap-4 pb-4 border-b border-slate-700">
-                <div class="flex flex-col basis-1/3 items-center gap-2 p-4 bg-cyan-600/25 rounded-lg shadow-lg transition duration-1000 hover:scale-105">
+                <div class="flex flex-col basis-1/3 items-center gap-2 p-4 bg-cyan-600/25 rounded-lg shadow-lg transition duration-500 hover:scale-105">
                   <h4 class="text-lg">Daily rate</h4>
                   <span class="text-lg">400€</span>
                   <p class="self-start text-xs">If you need me to work for your large project or your company</p>
                 </div>
 
-                <div class="flex flex-col basis-1/3 items-center gap-2 p-4 bg-cyan-600/25 rounded-lg shadow-lg transition duration-1000 hover:scale-105">
+                <div class="flex flex-col basis-1/3 items-center gap-2 p-4 bg-cyan-600/25 rounded-lg shadow-lg transition duration-500 hover:scale-105">
                   <h4 class="text-lg">Showcase website</h4>
                   <span class="text-lg">From 2000€</span>
                   <p class="self-start text-xs">Optionnal hosting and support: 50€/month</p>
@@ -258,7 +258,7 @@
                   <p class="self-start text-xs">Expected time: Less than 2 weeks</p>
                 </div>
 
-                <div class="flex flex-col basis-1/3 items-center gap-2 p-4 bg-cyan-600/25 rounded-lg shadow-lg transition duration-1000 hover:scale-105">
+                <div class="flex flex-col basis-1/3 items-center gap-2 p-4 bg-cyan-600/25 rounded-lg shadow-lg transition duration-500 hover:scale-105">
                   <h4 class="text-lg">E-commerce website</h4>
                   <span class="text-lg">From 8000€</span>
                   <p class="self-start text-xs">Optionnal hosting and support: 100€/month</p>
@@ -290,7 +290,7 @@
             x-init="setTimeout(() => {showTechnologies = true}, 1000)"
             x-show="showTechnologies"
             x-transition.delay.3000ms.duration.1000ms
-            class="flex flex-col w-full xl:basis-1/3 bg-linear-to-bl from-slate-900 to-cyan-900 transition duration-1000 hover:scale-101 shadow-lg rounded-lg p-4 md:p-6">
+            class="flex flex-col w-full xl:basis-1/3 bg-black transition duration-500 hover:scale-101 hover:shadow-md hover:shadow-slate-600/25 rounded-lg p-4 md:p-6">
             <div class="flex flex-col md:flex-row gap-4 items-start">
               <div class="basis-1/4">
                 <div class="flex items-center gap-2">
@@ -372,7 +372,7 @@
             x-init="setTimeout(() => {showCareer = true}, 1000)"
             x-show="showCareer"
             x-transition.delay.3500ms.duration.1000ms
-            class="flex flex-col w-full xl:basis-2/3 bg-linear-to-bl from-slate-900 to-cyan-900 transition duration-1000 hover:scale-101 shadow-lg rounded-lg p-4 md:p-6">
+            class="flex flex-col w-full xl:basis-2/3 bg-black transition duration-500 hover:scale-101 hover:shadow-md hover:shadow-slate-600/25 rounded-lg p-4 md:p-6">
             <div class="flex flex-col md:flex-row gap-4 items-start">
               <div class="basis-1/4">
                 <div class="flex items-center gap-2">
@@ -444,7 +444,7 @@
           x-init="setTimeout(() => {showProjects = true}, 1000)"
           x-show="showProjects"
           x-transition.delay.4000ms.duration.1000ms
-          class="flex flex-col w-full bg-linear-to-bl from-slate-900 to-cyan-900 transition duration-1000 hover:scale-101 shadow-lg rounded-lg p-4 md:p-6">
+          class="flex flex-col w-full bg-black transition duration-500 hover:scale-101 hover:shadow-md hover:shadow-slate-600/25 rounded-lg p-4 md:p-6">
           <div class="flex flex-col md:flex-row gap-4 items-start">
             <div class="basis-1/4">
               <div class="flex items-center gap-2">
@@ -515,7 +515,7 @@
                   <div class="relative min-h-[25svh] md:min-h-[35svh] lg:min-h-[50svh] w-full">
                       <template x-for="(slide, index) in slides">
                           <div x-show="currentSlideIndex == index + 1" class="absolute inset-0" x-transition.opacity.duration.1000ms>
-                              <img class="absolute w-full h-full inset-0 object-cover object-left-top md:object-top text-neutral-600 dark:text-neutral-300" x-bind:src="slide.imgSrc" x-bind:alt="slide.imgAlt" />
+                              <img class="absolute w-full h-full inset-0 object-cover object-left-top md:object-top text-neutral-600 rounded-md" x-bind:src="slide.imgSrc" x-bind:alt="slide.imgAlt" />
                           </div>
                       </template>
                   </div>
@@ -535,7 +535,7 @@
               <div class="flex flex-col w-full gap-4">
 
                 <div class="flex flex-col md:flex-row gap-4 w-full">
-                  <div class="bg-cyan-600/25 shadow-md rounded-lg p-4 w-full md:basis-1/2">
+                  <div class="bg-cyan-600/25 transition duration-500 hover:scale-105 shadow-md rounded-lg p-4 w-full md:basis-1/2">
                       <h4>Tournament Creation & Management</h4>
                       <ul class="list-disc pl-6">
                           <li>Supports solo and team-based tournaments.</li>
@@ -543,7 +543,7 @@
                           <li>Supports single and double elimination formats (for now).</li>
                       </ul>
                   </div>
-                  <div class="bg-cyan-600/25 shadow-md rounded-lg p-4 w-full md:basis-1/2">
+                  <div class="bg-cyan-600/25 transition duration-500 hover:scale-105 shadow-md rounded-lg p-4 w-full md:basis-1/2">
                       <h4>User Roles & Registration</h4>
                       <ul class="list-disc pl-6">
                           <li>Players can register for tournaments individually or as part of a team.</li>
@@ -554,14 +554,14 @@
                 </div>
   
                 <div class="flex flex-col md:flex-row gap-4 w-full">
-                  <div class="bg-cyan-600/25 shadow-md rounded-lg p-4 w-full md:basis-1/2">
+                  <div class="bg-cyan-600/25 transition duration-500 hover:scale-105 shadow-md rounded-lg p-4 w-full md:basis-1/2">
                       <h4>Team System</h4>
                       <ul class="list-disc pl-6">
                           <li>Players can create teams and invite others to join.</li>
                           <li>Teams can register for tournaments that support team-based competition.</li>
                       </ul>
                   </div>
-                  <div class="bg-cyan-600/25 shadow-md rounded-lg p-4 w-full md:basis-1/2">
+                  <div class="bg-cyan-600/25 transition duration-500 hover:scale-105 shadow-md rounded-lg p-4 w-full md:basis-1/2">
                       <h4>Ranking & Points System</h4>
                       <ul class="list-disc pl-6">
                           <li>A dynamic point-based ranking system for players.</li>
@@ -571,14 +571,14 @@
                 </div>
   
                 <div class="flex flex-col md:flex-row gap-4 w-full">
-                  <div class="bg-cyan-600/25 shadow-md rounded-lg p-4 w-full md:basis-1/2">
+                  <div class="bg-cyan-600/25 transition duration-500 hover:scale-105 shadow-md rounded-lg p-4 w-full md:basis-1/2">
                       <h4>Notifications & Invitations</h4>
                       <ul class="list-disc pl-6">
                           <li>Players receive notifications for tournament-related actions (invitations, registrations, etc.).</li>
                           <li>Organizers can send invitations and updates to participants.</li>
                       </ul>
                   </div>
-                  <div class="bg-cyan-600/25 shadow-md rounded-lg p-4 w-full md:basis-1/2">
+                  <div class="bg-cyan-600/25 transition duration-500 hover:scale-105 shadow-md rounded-lg p-4 w-full md:basis-1/2">
                       <h4>Rank Restrictions</h4>
                       <ul class="list-disc pl-6">
                           <li>Tournaments can have rank limits (e.g., only players ranked between 1 and 1000).</li>
